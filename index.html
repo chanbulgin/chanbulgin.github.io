@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NFL DATA EXPLORER</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src= "d3_v4.js"></script>
+</head>
+
+<body>
+
+  <header id = "main_header">
+    <div class = "container">
+      <h1 id = "header_title">Exploring NFL Draft Data</h1>
+      <p id="header_summary">
+        An interactive visualization of NFL combine statistics.
+      </p>
+    </div>
+  </header>
+
+  <div class = "container">
+    <section id = "controls">
+      <div class = "container">
+        <div class = "container_f" id = "cont_buttons">
+          <button class="btn1" name="CollegeAnalysis" id="CollegeAnalysis" onclick="collegeAnalysis()"> College Analysis </button>
+          <button class="btn2" name="NFLAnalysis" id="NFLAnalysis" onclick="nflAnalysis()"> NFL Team Analysis </button>
+          <button class="btn3" name="PlayerAnalysis" id="PlayerAnalysis" onclick="playerAnalysis()"> Player Analysis </button>
+        </div>
+        <div class = "container_f" id = "cont_forms">
+          <select class="form-control" name="selectYear" id="selectYear" onchange="populate()">
+            <option value="">Player</option>
+          </select>
+          <select class="form-control"name="selectPos" id="selectPos" onchange="populate()">
+            <option value="CB">CB</option>
+            <option value="DL">DL</option>
+            <option value="LB">LB</option>
+            <option value="OL">OL</option>
+            <option value="QB">QB</option>
+            <option value="RB">RB</option>
+            <option value="S">S</option>
+            <option value="TE">TE</option>
+            <option value="WR">WR</option>
+          </select>
+          <select class="form-control" name="selectPlay" id="selectPlay" onchange="chooseData()">
+              <option value="">Player</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <aside id = "infopanel">
+      <div class = "container">
+        <p id = "BIO1"></p>
+        <p id = "BIO2"></p>
+        <p id = "DataMissing"></p>
+        <p id = "ScoringLegend">Scoring is normalized from 1-10; 0 denotes a missing value.  College stats shown if available.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class = "container_f">
+    <section id = "Chart1"> <!-- radar1, radar2 -->
+      <div class = "container_f">
+        <div class="radarChart1"></div>
+        <div class="radarChart2"></div>
+      </div>
+    </section>
+    <aside id="Histograms"> <!-- histogram1, histogram2, histogram3-->
+      <div class = "container_g">
+        <div class="histograms1"></div>
+        <div class="histograms2"></div>
+        <div class="histograms3"></div>
+
+      </div>
+    </aside>
+  </div>
+
+  <section id = "Chart2"> <!-- parallel coordinates chart -->
+    <div class = "container">
+      <div class="paraChart1" </div>
+    </div>
+  </section>
+</div>
+
+<script type="application/javascript" src="script_test.js"></script>
+<script type="application/javascript" src="radarChart.js"></script>
+<script type="application/javascript" src="ParaCoorChart2.js"></script>
+<script type="application/javascript" src="hist copy.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+*{
+  margin: 0;
+  padding: 0;
+  /* The above resets all margin and padding for everything to 0 */
+}
+
+body{
+  background-color:#f4f4f4;
+  color:#7555321
+  font-family: "Georgia", Times, serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  margin:0;
+}
+
+.container_f{
+    width:96%;
+    margin:auto;
+    overflow:hidden;
+    display: flex;
+}
+.container_g{
+    width:96%;
+    margin:auto;
+    overflow:hidden;
+}
+
+.container{
+  width:96%;
+  margin:auto;
+  overflow:hidden;
+}
+
+#main_header {
+  width: 96%;
+  height: 65px;
+  margin: auto;
+  border: 10px solid black;
+  border-radius: 15px;
+  background-image:url('/images/football-field3.jpg');
+  position: relative;
+
+}
+
+#header_title{
+  font-family: "Georgia", Times, serif;
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+
+}
+
+#header_summary{
+  font-family: "Georgia", Times, serif;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  top: 40px;
+}
+
+#controls{
+  float: left;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  width: 40%;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 103px;
+}
+
+#cont_buttons{
+  justify-content: center;
+
+}
+
+#cont_forms{
+  justify-content: center;
+  padding-top: 5px;
+}
+
+#infopanel{
+  float: right;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  width: 60%;
+  background: #006d24;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 80px;
+}
+
+#Chart1 {
+  float: left;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  width: 75%;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 330px;
+}
+
+#Histograms {
+  float: right;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 330px;
+}
+
+#Chart2{
+  width: 96%;
+  margin: auto;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  min-height: 220px;
+  color: #000000;
+  text-align: center;
+}
+
+#radarChart1{
+  display: inline-flex;
+}
+
+#radarChart2{
+  display: inline-flex;
+}
+
+.line {
+  stroke-width: 3;
+}
+
+.form-control{
+  /*  margin-left: auto;
+    margin-right: auto; */
+  background-color: #cdbfb0;
+  color: #2f2f30;
+  font-family: "Georgia", Times, serif;
+  font-size: 14px;
+  border: 3px solid #427584;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btn1 {
+/*  margin-left: auto;
+  margin-right: auto; */
+
+  width:30%;
+  background-color: #cdbfb0;
+  color: #2f2f30;
+  font-family: "Georgia", Times, serif;
+  font-size: 14px;
+  border: 3px solid #234058;
+  border-radius: 15px;
+  cursor: pointer;
+
+}
+
+.btn2 {
+  /*  margin-left: auto;
+    margin-right: auto; */
+  width:30%;
+  padding: 2px;
+  background-color: #047028;
+  color: #ffffff;
+  font-family: "Georgia", Times, serif;
+  font-size: 14px;
+  border: 3px solid #564536;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btn3 {
+  /*  margin-left: auto;
+    margin-right: auto; */
+  width:30%;
+  padding: 2px;
+  background-color: #cdbfb0;
+  color: #2f2f30;
+  font-family: "Georgia", Times, serif;
+  font-size: 14px;
+  border: 3px solid #2f2f30;
+  border-radius: 15px;
+  cursor: pointer;
+}
