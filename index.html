@@ -1,91 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>NFL Combine Data Explorer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-<head>
-    <meta charset="UTF-8">
-    <title>NFL DATA EXPLORER</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <script src= "d3_v4.js"></script>
-</head>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-<body>
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/site_thumbnail.png" style = "width:128px;height:81px;" alt="" /></span>
+							<h1>NFL Combine Data Explorer</h1>
+							<p>An interactive visualization of combine statistics.</p>
+						</header>
+						<!--
+						<hr />
+						<h2>Extra Stuff!</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<select name="department" id="department">
+										<option value="">Department</option>
+										<option value="sales">Sales</option>
+										<option value="tech">Tech Support</option>
+										<option value="null">/dev/null</option>
+									</select>
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+								</div>
+								<div class="field">
+									<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
+								</div>
+								<div class="field">
+									<label>But are you a robot?</label>
+									<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
+									<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
+								</div>
+							</div>
+							<ul class="actions special">
+								<li><a href="#" class="button">Get Started</a></li>
+							</ul>
+						</form>
+						<hr />
+						-->
+						<footer>
+							<ul style="list-style: none;">
+								<li style="margin-top: 10px;">
+								<a href="https://www.youtube.com/watch?v=l9iSWTs13lo" target="_blank">Intro Video: &nbsp;
+								<p><img style="width:48px;height:27px;" src="images\youtube_thumbnail.png"></p>
+          				</a>
+								</li>
+								<li tyle="margin-top: 10px;">
+									<a href="https://chanbulgin.github.io/Project.html">Go to site: &nbsp;
+									<p><img style="width:48px;height:27px;" src="images\site_thumbnail.png"></p>
+          				</a>
+								</li>
+								<li tyle="margin-top: 10px;">
+									<a href="https://www.linkedin.com/in/chan-bulgin-b3b582/">Co-creator Chan Bulgin: &nbsp;
+										<img style="width:48px;height:48px;" src="images\linkedin.png">
+									</a>
+								</li>
+								<li tyle="margin-top: 10px;">
+									<a href="mailto:wwautlet@gmu.edu">Co-creator William Wautlet: &nbsp;
+										<img style="width:48px;height:27px;" src="images\gmu.png">
+									</a>
+								</li>
+							</ul>
+						</footer>
+					</section>
 
-  <header id = "main_header">
-    <div class = "container">
-      <h1 id = "header_title">Exploring NFL Draft Data</h1>
-      <p id="header_summary">
-        An interactive visualization of NFL combine statistics.
-      </p>
-    </div>
-  </header>
+				<!-- Footer -->
+					<footer id="footer">
 
-  <div class = "container">
-    <section id = "controls">
-      <div class = "container">
-        <div class = "container_f" id = "cont_buttons">
-          <button class="btn1" name="CollegeAnalysis" id="CollegeAnalysis" onclick="collegeAnalysis()"> College Analysis </button>
-          <button class="btn2" name="NFLAnalysis" id="NFLAnalysis" onclick="nflAnalysis()"> NFL Team Analysis </button>
-          <button class="btn3" name="PlayerAnalysis" id="PlayerAnalysis" onclick="playerAnalysis()"> Player Analysis </button>
-        </div>
-        <div class = "container_f" id = "cont_forms">
-          <select class="form-control" name="selectYear" id="selectYear" onchange="populate()">
-            <option value="">Player</option>
-          </select>
-          <select class="form-control"name="selectPos" id="selectPos" onchange="populate()">
-            <option value="CB">CB</option>
-            <option value="DL">DL</option>
-            <option value="LB">LB</option>
-            <option value="OL">OL</option>
-            <option value="QB">QB</option>
-            <option value="RB">RB</option>
-            <option value="S">S</option>
-            <option value="TE">TE</option>
-            <option value="WR">WR</option>
-          </select>
-          <select class="form-control" name="selectPlay" id="selectPlay" onchange="chooseData()">
-              <option value="">Player</option>
-          </select>
-        </div>
-      </div>
-    </section>
-    <aside id = "infopanel">
-      <div class = "container">
-        <p id = "BIO1"></p>
-        <p id = "BIO2"></p>
-        <p id = "DataMissing"></p>
-        <p id = "ScoringLegend">Scoring is normalized from 1-10; 0 denotes a missing value.  College stats shown if available.</p>
-      </div>
-    </aside>
-  </div>
+					</footer>
 
-  <div class = "container_f">
-    <section id = "Chart1"> <!-- radar1, radar2 -->
-      <div class = "container_f">
-        <div class="radarChart1"></div>
-        <div class="radarChart2"></div>
-      </div>
-    </section>
-    <aside id="Histograms"> <!-- histogram1, histogram2, histogram3-->
-      <div class = "container_g">
-        <div class="histograms1"></div>
-        <div class="histograms2"></div>
-        <div class="histograms3"></div>
+			</div>
 
-      </div>
-    </aside>
-  </div>
+		<!-- Scripts -->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
 
-  <section id = "Chart2"> <!-- parallel coordinates chart -->
-    <div class = "container">
-      <div class="paraChart1" </div>
-    </div>
-  </section>
-</div>
-
-<script type="application/javascript" src="script_test.js"></script>
-<script type="application/javascript" src="radarChart.js"></script>
-<script type="application/javascript" src="ParaCoorChart2.js"></script>
-<script type="application/javascript" src="hist copy.js"></script>
-</body>
-
+	</body>
 </html>
